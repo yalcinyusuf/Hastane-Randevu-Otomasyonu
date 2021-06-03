@@ -481,7 +481,7 @@ class dataBase():
         return (self.cursor.fetchall())
 a = dataBase()
 
-a.randevuEkle('53361301345','Yusuf', 'YALÇIN','01.07.2021','09.30','Dahiliye', 'Hasan Ustundag', 'yalcinyusufyy@gmail.com','Erkek','01.04.2004')
+a.randevuEkle('53361301345','Yusuf', 'YALCIN','01.07.2021','09.30','Dahiliye', 'Hasan Ustundag', 'yalcinyusufyy@gmail.com','Erkek','01.04.2004')
 
 
 
