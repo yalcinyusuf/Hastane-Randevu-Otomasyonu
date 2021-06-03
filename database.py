@@ -315,17 +315,6 @@ class dataBase():
                ''')
         self.conn.commit()
 
-    def getDoktorlar(self)->list:
-        '''
-            Bu fonksiyon database'deki doktorlari ceker.
-        '''
-        self.cursor.execute('SELECT DISTINCT Doktor FROM HASTA')
-        
-        return self.cursor.fetchall()
-    
-    def getPoliklinikler(self)->list:
-        self.cursor.execute('SELECT DISTINCT Poliklinik FROM Hasta')
-        return self.cursor.fetchall()
     
     def randevuEkle(self,tc,ad,soyad,tarih,saat,poliklinik,doktor,mail,cinsiyet,dogum_tarihi)->None:
         '''
@@ -371,13 +360,7 @@ class dataBase():
         '''
         self.cursor.execute('EXEC createTable')
         return self.cursor.fetchall()
-    
-    def getHasta(self,date)->list:
-        '''
-            Verilen tarih degerindeki randevu saatlerini dondurur.
-        '''
-        self.cursor.execute('SELECT Saat FROM Hasta WHERE Tarih = ? ',date)
-        return self.cursor.fetchall()
+
     
     def getUniqueDoctors(self,date,saat)->list:
         '''
@@ -385,16 +368,6 @@ class dataBase():
         '''
         self.cursor.execute('SELECT Doktor,Poliklinik FROM Poliklinikler,Randevu Where Tarih = ? and Saat = ? ',(date,saat))
         return self.cursor.fetchall()
-    
-    def hastaBul(self,tc):
-        '''
-            Verilen TC degerine gore hastalarin randevu bilgilerini bulur.
-        '''
-        try:
-            self.cursor.execute("EXEC hastaBul ?",tc)
-            return self.cursor.fetchall()
-        except Exception:
-            return False
         
     def getUniqueTC(self,tc):
         self.cursor.execute('SELECT DISTINCT TC,AD,SOYAD FROM HASTA WHERE TC = ?',tc)
@@ -477,6 +450,7 @@ class dataBase():
             print('Hata!')
 
     def getIstatistikValues(self):
+        # Tablodaki tüm istatik değerlerini çeker.
         self.cursor.execute('SELECT * FROM Istatistik')
         return (self.cursor.fetchall())
 a = dataBase()
