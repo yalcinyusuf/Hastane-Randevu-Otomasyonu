@@ -100,7 +100,7 @@ class hastaEkle(QWidget):
         # Validator atayarak lineEditlere rakam/harf girislerini engelledik.
 
         numberValidator = QRegExpValidator(QRegExp('[0-9]+'))
-        letterValidator = QRegExpValidator(QRegExp('[a-zA-Z üÜöÖğĞçÇİşŞ]+'))
+        letterValidator = QRegExpValidator(QRegExp('[a-zA-Z ]+'))
 
         # lineEditlerin max uzakliklarini belirledik.
         self.tc_Line.setMaxLength(11)
@@ -231,10 +231,10 @@ class hastaEkle(QWidget):
         dogum_tarihi = self.dt_dateEdit.date().toString("MM.dd.yyyy")
         mail = self.mail_Line.text()
         uniquePatiens = self.parent.database.getUniqueTC(tc)
-        print(uniquePatiens)
+
         if (
                 mail == '' or ad == '' or soyad == '' or tc == '' or doktor == 'Doktor Seciniz.' or poliklinik == 'Poliklinik Seciniz.' or saat == 'Saat Seciniz.'):
-            print('a')
+
             self.errorBox('Lutfen tum alanlari eksiksiz doldurunuz!')
 
         elif (len(tc) < 11):
@@ -462,15 +462,8 @@ class mainApp(QMainWindow):
             msg += 'Saat: ' + str(self.database.getAllPatients()[i][6]) + ' | '
             msg += 'Poliklinik: ' + str(self.database.getAllPatients()[i][4]) + ' | '
             msg += 'Doktor: ' + str(self.database.getAllPatients()[i][3]) + '\n'
-        print(msg)
         createPDF(msg)
 
 
-app = QApplication(sys.argv)
-demo = mainApp()
-demo.show()
-try:
-    sys.exit(app.exec_())
-except SystemExit:
-    print('Closing Window')
+
 

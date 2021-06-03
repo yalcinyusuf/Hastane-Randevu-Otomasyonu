@@ -46,14 +46,3 @@ except SystemExit:
 
 
 
-# def showDialog():
-#    msgBox = QMessageBox()
-#    msgBox.setIcon(QMessageBox.Information)
-#    msgBox.setText("Message box pop up window")
-#    msgBox.setWindowTitle("QMessageBox Example")
-#    msgBox.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-#    msgBox.buttonClicked.connect(msgButtonClick)
-
-#    returnValue = msgBox.exec()
-#    if returnValue == QMessageBox.Ok:
-#       print('OK clicked')
