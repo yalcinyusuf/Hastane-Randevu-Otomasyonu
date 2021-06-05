@@ -2,6 +2,8 @@
 Bu hastanede 2 poliklinik ve 4 doktor vardır. Her poliklinikte 2 doktor şeklinde hasta tedavi etmektedir. 
 
 Projeyi yaparken MSSQL Server veri tabanı ile Python dili kullanıldı.Veri tabanının arayüzünü görselleştirmek için arayüz olarak PyQt5 kütüphanesi kullanıldı.Arayüzleri dizayn etmek için Qt Designer adlı programdan yararlanıldı.
+
+Otomasyon kodu yazılırken hem Windows hem de MacOS işletim sisteminde çalışması sağlanmıştır.Veri tabanı bağlantısı için MacOS için pymssql kullanırken,Windows işletimli bilgisayar için pyodbc kütüphanesi kullanıldı.
 # Giriş Ekranı:
 ![image](https://user-images.githubusercontent.com/61952281/120885823-8db36080-c5f3-11eb-81c9-3895cc00e699.png)
 
