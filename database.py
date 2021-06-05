@@ -2,7 +2,7 @@ import pyodbc
 import time 
 
 class dataBase():
-    """2 tane tablodan olusan database class'i. Database'e veri ekleme, veri cikarma gibi islemleri yapabileceginiz class.
+    """4 tane tablodan olusan database class'i. Database'e veri ekleme, veri cikarma gibi islemleri yapabileceginiz class.
     """    
     def __init__(self):
         self.conn = pyodbc.connect(
@@ -20,7 +20,7 @@ class dataBase():
 
     def createTable(self)->None:
         '''
-            Bu fonksiyon 2 tane tablo olusturur. Ilki hasta tablosu, ikincisi istatistik tablosu.
+            Bu fonksiyon 4 tane tablo olusturur. Hasta tablosu,Randevu tablosu,Poliklinik tablosu ve Istatistik tablosu.
         '''
         self.cursor.execute('''
             if not exists (select * from sysobjects where name='Hasta' and xtype='U')
