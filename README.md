@@ -1,3 +1,5 @@
+Hospital appointment automation project that includes database operations by using the PyQt5 library and Qt Designer program for the interface by establishing a MSSQL Server database connection via Python
+
 Bu hastanede 2 poliklinik ve 4 doktor vardır. Her poliklinikte 2 doktor şeklinde hasta tedavi etmektedir. 
 
 Projeyi yaparken MSSQL Server veri tabanı ile Python dili kullanıldı.Veri tabanının arayüzünü görselleştirmek için arayüz olarak PyQt5 kütüphanesi kullanıldı.Arayüzleri dizayn etmek için Qt Designer adlı programdan yararlanıldı.
